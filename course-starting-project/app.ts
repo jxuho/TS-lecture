@@ -1,11 +1,10 @@
-  function combine(input1: number | string, input2: number | string) {
-    if (typeof input1 === 'number' && typeof input2 === "number") {
-      return input1 + input2;
-    } else {
-      return input1.toString() + input2.toString();
-    }
-  }
+function add(n1: number, n2:number): number {
+  return n1 + n2;
+}
 
-  const combinedAges = combine(20, 40);
+function printResult(num:number) {
+  console.log('Result: ' + num);
+}
 
-  const combinedNames = combine("Juho", "Linh");
+console.log(printResult(add(5,12)));  // undefined
+printResult(add(5, 12));  // Result: 17
