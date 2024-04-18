@@ -1,16 +1,11 @@
-enum Role { ADMIN, READ_ONLY, AUTHOR};
+  function combine(input1: number | string, input2: number | string) {
+    if (typeof input1 === 'number' && typeof input2 === "number") {
+      return input1 + input2;
+    } else {
+      return input1.toString() + input2.toString();
+    }
+  }
 
-enum Role2 { ADMIN = 5, READ_ONLY, AUTHOR = 100};
-enum Role3 { ADMIN = "ADMIN", READ_ONLY = 1, AUTHOR = 100};
+  const combinedAges = combine(20, 40);
 
-const person = {
-	name: 'Juho',
-	age: 26,
-	role: Role.ADMIN
-}
-
-console.log(Role.AUTHOR); // 결과: 2
-console.log(Role2.READ_ONLY);  // 6
-console.log(Role2.AUTHOR);  // 100
-console.log(Role3.ADMIN);  // 'ADMIN'
-
+  const combinedNames = combine("Juho", "Linh");
