@@ -1,14 +1,16 @@
-const person: {
-	name: string;
-	age: number;
-	role: [number, string];  // tuple type을 지정함.
-} = {
+enum Role { ADMIN, READ_ONLY, AUTHOR};
+
+enum Role2 { ADMIN = 5, READ_ONLY, AUTHOR = 100};
+enum Role3 { ADMIN = "ADMIN", READ_ONLY = 1, AUTHOR = 100};
+
+const person = {
 	name: 'Juho',
 	age: 26,
-	role: [2, 'author']
+	role: Role.ADMIN
 }
 
-person.role[1] = 10;
-person.role = []
+console.log(Role.AUTHOR); // 결과: 2
+console.log(Role2.READ_ONLY);  // 6
+console.log(Role2.AUTHOR);  // 100
+console.log(Role3.ADMIN);  // 'ADMIN'
 
-person.role.push("hello")  // push는 예외적으로 가능함.
