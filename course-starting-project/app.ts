@@ -1,20 +1,14 @@
-const person1 = {
-  name: "Juho",
-  age: 26,
-  hobbies: ["sports", "cooking"]
+const person: {
+	name: string;
+	age: number;
+	role: [number, string];
+} = {
+	name: 'Juho',
+	age: 26,
+	role: [2, 'author']
 }
 
-let favoriteActivites1: string[];
-favoriteActivites1 = ["Sports", 1];
+person.role[1] = 10;
+person.role = []
 
-let favoriteActivites2: any[];
-favoriteActivites2 = ["Sports", 1];
-
-
-console.log(person1.name);
-
-
-for (const hobby of person1.hobbies) {
-  console.log(hobby.toUpperCase());
-}
-
+person.role.push("hello")  // push는 예외적으로 가능함
