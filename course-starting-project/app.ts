@@ -16,7 +16,7 @@ console.log(person2.name);
 
 
 
-// person3 object의 key-type을 지정
+// person3 object의 key-type을 지정. 가능하지만 불필요함.
 const person3: {
   name: string;
   age: number;
