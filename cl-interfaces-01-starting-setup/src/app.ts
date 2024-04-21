@@ -1,17 +1,35 @@
 class Department {
-  // private readonly id: string;
-  // private name: string;
+  protected employees: string[] = [];
 
-  constructor(private readonly id:string, public name: string) {
-    // this.id = id;
-    // this.name = n;
-  }
+  constructor(private readonly id: string, public name: string) {}
 
-  describe(this: Department) {
-    this.id = 'd2'  // readonly : 에러 발생
-    console.log(`Department: ${this.id}: ${this.name}`);
+  addEmployee(name: string) {
+    this.employees.push(name);
   }
 }
 
-const accounting = new Department('d1', "Accounting");
-accounting.describe()
+class ITDepartment extends Department {
+  admins: string[];
+  constructor(id: string, admins: string[]) {
+    super(id, "IT");
+    this.admins = admins;
+  }
+}
+
+class AccountingDepartment extends Department {
+  constructor(id: string) {
+    super(id, "accounting");
+  }
+
+  addEmployee(name: string) {
+    this.employees.push(name);
+  }
+}
+
+const newDepartment = new ITDepartment("d1", ["juho, linh"]);
+newDepartment.addEmployee("juho");
+console.log(newDepartment);
+
+const accountDepartment = new AccountingDepartment("d2");
+accountDepartment.addEmployee("linh");
+console.log(accountDepartment);
